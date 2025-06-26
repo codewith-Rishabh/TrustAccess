@@ -12,8 +12,10 @@ connection();
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-const allowOrigins = ['http://localhost:5173']
-
+const allowOrigins = [
+  'http://localhost:5173',
+  'https://yourfrontend.onrender.com'
+];
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({origin:allowOrigins, credentials: true}));
