@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import SignUp from './pages/singUp';
 import Login from './pages/login';
 import ResetPassword from './pages/ResetPassWord';
 import { ToastContainer} from 'react-toastify';
