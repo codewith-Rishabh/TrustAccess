@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 8080;
 
 const allowOrigins = [
   'http://localhost:5173',
-  'https://yourfrontend.onrender.com'
+ 'https://trustaccess-1.onrender.com'
 ];
 app.use(express.json());
 app.use(cookieParser());
