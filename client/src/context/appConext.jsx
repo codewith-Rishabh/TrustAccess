@@ -8,11 +8,12 @@ export const AppContext = createContext();
 export const AppContextProvider = (props) => {
     const backendUrl = import.meta.env.VITE_BACKEND_URL;
     const [isLoggedin, setIsLoggedin] = useState(false);
-    const [userData, setUserData] = useState('');
+    const [userData, setUserData] = useState({});
 
     const getUserData = async () => {
         try {
             const res = await axios.get(`${backendUrl}/api/user/data`, { withCredentials: true });
+            
             if (res.data.success) {
                 setUserData(res.data.userData);
             } else {
@@ -28,7 +29,7 @@ export const AppContextProvider = (props) => {
             const res = await axios.get(`${backendUrl}/api/auth/is-auth`, { withCredentials: true });
             if (res.data.success) {
                 setIsLoggedin(true);
-                getUserData();
+               await getUserData();            
             } else {
                 setIsLoggedin(false);
             }
