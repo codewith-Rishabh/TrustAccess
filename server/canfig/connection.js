@@ -5,9 +5,7 @@ const connection = async ()=> {
 
     try {
 
-        const connectDb = await mongoose.connect(process.env.MONGO_URL,{
-            useNewUrlParser: true,
-        });
+        const connectDb = await mongoose.connect(process.env.MONGO_URL);
         
         console.log("Database Connection Successful Hai", connectDb.connection.host, connectDb.connection.name);
         
